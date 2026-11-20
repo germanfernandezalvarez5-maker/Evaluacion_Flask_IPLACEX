@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Python - IPLACEX</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <main class="contenedor">
+        <h1>Evaluación Unidad 3</h1>
+
+        <p class="subtitulo">
+            Fundamentos de Python y Flask
+        </p>
+
+        <h2>Menú Principal</h2>
+
+        <p>Selecciona el ejercicio que deseas realizar:</p>
+
+        <div class="menu">
+            <a href="{{ url_for('ejercicio1') }}" class="boton">
+                Ejercicio 1
+            </a>
+
+            <a href="{{ url_for('ejercicio2') }}" class="boton">
+                Ejercicio 2
+            </a>
+        </div>
+
+        <footer>
+            Programación Web | IPLACEX
+        </footer>
+    </main>
+
+</body>
+</html>

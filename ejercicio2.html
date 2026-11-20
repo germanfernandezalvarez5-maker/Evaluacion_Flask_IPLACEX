@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Comparación de nombres</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <main class="contenedor">
+        <h1>Comparación de Nombres</h1>
+
+        <p class="subtitulo">
+            Ingresa tres nombres diferentes.
+        </p>
+
+        <form method="POST">
+
+            <label for="nombre1">Nombre 1:</label>
+            <input type="text" id="nombre1" name="nombre1"
+                   placeholder="Ingresa el primer nombre" required>
+
+            <label for="nombre2">Nombre 2:</label>
+            <input type="text" id="nombre2" name="nombre2"
+                   placeholder="Ingresa el segundo nombre" required>
+
+            <label for="nombre3">Nombre 3:</label>
+            <input type="text" id="nombre3" name="nombre3"
+                   placeholder="Ingresa el tercer nombre" required>
+
+            <button type="submit" class="boton">
+                Enviar
+            </button>
+
+        </form>
+
+        {% if nombre_mayor %}
+            <div class="resultado">
+                <h2>Resultado</h2>
+
+                <p>
+                    El nombre con mayor cantidad de caracteres es:
+                </p>
+
+                <p class="estado">{{ nombre_mayor }}</p>
+
+                <p>
+                    El nombre tiene:
+                    <strong>{{ cantidad_caracteres }}</strong>
+                    caracteres.
+                </p>
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <a href="{{ url_for('inicio') }}" class="volver">
+            Volver al menú principal
+        </a>
+
+    </main>
+
+</body>
+</html>
